@@ -1,0 +1,39 @@
+<div class="container" >
+  <h1>Sentence Builder App!</h1>
+
+  <p>
+    This application allows you to dynamically build a sentence by selecting words based on their types.
+  </p>
+
+  <div class="options">
+    <label for="type">Type:</label>
+    <select id="type" [(ngModel)]="selectedType" (change)="changeType(selectedType)">
+      <option *ngFor="let word of words" [value]="word.type">{{ word.type }}</option>
+    </select>
+
+    <label for="word">Word:</label>
+    <select id="word" [(ngModel)]="selectedWord">
+      <option *ngFor="let words of wordsList" [value]="words">{{ words }}</option>
+    </select>
+</div>
+
+  <div class="button-container">
+    <button name="add" (click)="addWord(selectedWord)">Add to sentence</button>
+    <button name="clear" (click)="clearSentence()">Clear Sentence</button>
+  </div>
+
+  <textarea name="mySentence" readonly>
+    {{sentence}}
+  </textarea>
+
+  <button name="submit" (click)="submit()">Submit Sentence</button>
+  
+  <div class="sentence-list">
+    <label for="savedSentences" *ngIf="!isLoading">Saved Sentences:</label>
+    <label for="savedSentences" *ngIf="isLoading">Loading...</label>
+    <ul>
+      <li *ngFor="let sentence of savedSentences">{{ sentence.sentence }}</li>
+    </ul>
+  </div>
+
+</div>

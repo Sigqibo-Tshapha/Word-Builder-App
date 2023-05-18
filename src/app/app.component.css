@@ -1,0 +1,15 @@
+body{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #125A71, #48B868);
+  margin: -10px;
+  color: antiquewhite;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+
+}

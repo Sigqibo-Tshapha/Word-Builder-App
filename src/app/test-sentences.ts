@@ -1,0 +1,1 @@
+export const testSentences: string[] = [ 'Sentence one', 'Sentence two', 'Sentence three',];
